@@ -1,8 +1,9 @@
 import tensorflow as tf
 # NumPy is often used to load, manipulate and preprocess data.
 import numpy as np
+tf.logging.set_verbosity(tf.logging.ERROR)
 
-gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.6)
 sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
 # Declare list of features. We only have one real-valued feature. There are many
