@@ -2,6 +2,9 @@ import tensorflow as tf
 # NumPy is often used to load, manipulate and preprocess data.
 import numpy as np
 
+gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+
 # Declare list of features. We only have one real-valued feature. There are many
 # other types of columns that are more complicated and useful.
 features = [tf.contrib.layers.real_valued_column("x", dimension=1)]
